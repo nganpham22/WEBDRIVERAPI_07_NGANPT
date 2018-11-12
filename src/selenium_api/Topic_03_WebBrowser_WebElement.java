@@ -10,7 +10,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class Topic_03_WebBrowser_WebElement {
-	//Declare a driver
+	//Khai bao bien 
 	WebDriver driver;
 	//Enabled Element
 	String email = "//input[@id='mail']";
@@ -20,6 +20,7 @@ public class Topic_03_WebBrowser_WebElement {
 	String InterestDev = "//input[@id='development']";
 	String Slide01 = "//input[@id='slider-1']";
 	String ButtonEnabled = "//button[@id='button-enabled']";
+	
 	//Disabled Element
 	String Password = "//input[@id='password']";
 	String DisabledRadio = "//label[text() = 'Radiobutton is disabled']";
@@ -42,11 +43,13 @@ public class Topic_03_WebBrowser_WebElement {
 		driver.get("http://daominhdam.890m.com/");
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
+		
 		//Step 02
 		//Verify Email/Age(Under 18)/Education
 		IsDisplay(email);
 		IsDisplay(AgeUnder18);
 		IsDisplay(Education);
+		
 		//Step 03
 		//Enter Automation Testing into Email/Education and select Age = Under 18
 		Enter("Automation Testing", email);
@@ -62,7 +65,8 @@ public class Topic_03_WebBrowser_WebElement {
 		driver.get("http://daominhdam.890m.com/");
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
-		//Step 02 +03 + 04
+		
+		//Step 02 - 04
 		//Verify Enable element
 		IsEnabled(email);
 		IsEnabled(AgeUnder18);
@@ -83,17 +87,20 @@ public class Topic_03_WebBrowser_WebElement {
 	}
 	@Test(enabled = true)
 	public void Exercise_03() {
+		
 		//VERIFY SELECTED ELEMENT
 		//Step 1
 		//Open URL http://daominhdam.890m.com/
 		driver.get("http://daominhdam.890m.com/");
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
+		
 		//Step 02
 		//Click Age/ Interest Dev
 		Click(AgeUnder18);
 		Click(InterestDev);
-		//Step 03+04
+		
+		//Step 03,04
 		//Verify and click again if not yet selected
 		IsSelected(AgeUnder18);
 		IsSelected(InterestDev);
